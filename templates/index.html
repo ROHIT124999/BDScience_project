@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<!-- meta data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<!--font-family-->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+
+	<!-- title of site -->
+	<title>Health Care Fraud Detection</title>
+
+	<!-- For favicon png -->
+	<link rel="shortcut icon" type="image/icon" href="static/logo/favicon.png" />
+
+	<!--font-awesome.min.css-->
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+	<!--linear icon css-->
+	<!-- <link rel="stylesheet" href="static/css/linearicons.css"> -->
+
+	<!--flaticon.css-->
+	<!-- <link rel="stylesheet" href="static/css/flaticon.css"> -->
+
+	<!--animate.css-->
+	<link rel="stylesheet" href="static/css/animate.css">
+
+	<!--owl.carousel.css-->
+	<!-- <link rel="stylesheet" href="static/css/owl.carousel.min.css"> -->
+	<!-- <link rel="stylesheet" href="static/css/owl.theme.default.min.css"> -->
+
+	<!--bootstrap.min.css-->
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+	<!-- bootsnav -->
+	<!-- <link rel="stylesheet" href="static/css/bootsnav.css" >	 -->
+
+	<!--style.css-->
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<!--responsive.css-->
+	<!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+</head>
+
+<body>
+
+	<div class="welcome-hero">
+		<div class="top-area">
+			<div class="header-area">
+				<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+					data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+					<div class="container">
+
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="index.html">Health Care Fraud Detection<span></span></a>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+
+		</div><!-- /.top-area-->
+		<!-- top-area End -->
+
+		<div class="container">
+			<div class="welcome-hero-txt">
+				<h2>Verify if your healthcare provider is Fraud</h2>
+				<p>
+					Healthcare provider fraud is a significant issue that leads to substantial financial losses and
+					compromised patient care.
+					We have a data-driven solution to detect and prevent fraud committed by healthcare providers.
+					Specifically, we analyze healthcare claims data to identify anomalous patterns and potentially
+					fraudulent activities.
+
+			</div>
+		</div>
+		<div class="container">
+			{% if scroll!=''%}
+			<div class="container model-search-content" id="gotit">
+				<div class="single-model-search " style="" id="result">
+					<h2 class=" col-sm-11 mt-3" style="margin: 10px; text-align: center;">Your Health policy is {{name}}</h2>
+					<!-- </div>
+			<div class="welcome-hero-txt" id="result" style="padding: 0%!important;"> 	onclick="window.location.href='/';" -->
+					<div class=" col-sm-11" style="margin: 10px;">
+						<button type="submit" class=" col-sm-11"
+							style="color: rgb(41, 192, 74); border: 1px solid black; width: 100px;" id="target">
+							Got It
+						</button>
+					</div>
+
+					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+					<script>
+
+						$(document).ready(function () {
+							$("#target").click(function () {
+								$("#gotit").hide();
+							});
+						}); 
+					</script>
+				</div>
+			</div>
+			{% endif %}
+			<div class="row" style="position: relative;">
+
+				<div class="col-md-12">
+					<div class="model-search-content">
+						<form id="todo-form" method="post">
+							<!-- action="{{url_for('view.home')}}" -->
+							<div class="row">
+								<h5 style="margin: 30px;">Please provide the necessary information to verify the
+									legitimacy
+									of your policy and ensure its authenticity.</h5>
+								<div class="col-md-offset-1 col-md-10 col-sm-12">
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">InscClaimAmtReimbursed</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="InscClaimAmtReimbursed" required
+												name="InscClaimAmtReimbursed">
+										</div>
+									</div>
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">IPAnnualReimbursementAmt</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="IPAnnualReimbursementAmt"
+												required name="IPAnnualReimbursementAmt">
+										</div>
+									</div>
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">IPAnnualDeductibleAmt</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="IPAnnualDeductibleAmt" required
+												name="IPAnnualDeductibleAmt">
+										</div>
+									</div>
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">OPAnnualReimbursementAmt</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="OPAnnualReimbursementAmt"
+												required name="OPAnnualReimbursementAmt">
+										</div>
+									</div>
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">OPAnnualDeductibleAmt</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="OPAnnualDeductibleAmt" required
+												name="OPAnnualDeductibleAmt">
+										</div>
+									</div>
+
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">Age</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="Age" name="Age" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">DaysAdmitted</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="DaysAdmitted"
+												name="DaysAdmitted" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">TotalDiagnosis</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="TotalDiagnosis"
+												name="TotalDiagnosis" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">TotalProcedure</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="TotalProcedure"
+												name="TotalProcedure" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">EncounterType</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="EncounterType"
+												name="EncounterType" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">Gender</h2>
+										<div class=" col-sm-6">
+											<select name="Gender" id="Gender" required>
+												<option value="" disabled selected>Select</option>
+												<!-- <option value="0">Male</option> -->
+												<option value="1">Male</option>
+												<option value="2">Female</option>
+											</select>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">Race</h2>
+										<div class=" col-sm-6">
+											<select name="Race" id="Race" required>
+												<option value="" disabled selected>Select</option>
+												<option value="1">Caucasian (White)</option>
+												<option value="2">African American (Black)</option>
+												<option value="3">Asian</option>
+												<option value="4">Indigenous or Native Peoples</option>
+												<option value="5">Latino or Hispanic</option>
+											</select>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">RenalDiseaseIndicator</h2>
+										<div class=" col-sm-6">
+											<input class="form-control" type="text" id="RenalDiseaseIndicator"
+												name="RenalDiseaseIndicator" required>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">Select all the Disease patient had.</h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Alzheimer</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Alzheimer" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Heartfailure</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Heartfailure" value="1" />
+											</div>
+										</div>
+										
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_KidneyDisease</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_KidneyDisease" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Cancer</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Cancer" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_ObstrPulmonary</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_ObstrPulmonary" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Depression</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Depression" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Diabetes</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Diabetes" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_IschemicHeart</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_IschemicHeart" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_Osteoporasis</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_Osteoporasis" value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_rheumatoidarthritis</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_rheumatoidarthritis"
+													value="1" />
+											</div>
+										</div>
+										<h2 class=" col-sm-4"></h2>
+										<div class="single-model-search row">
+											<h2 class=" col-sm-4">ChronicCond_stroke</h2>
+											<div class=" col-sm-1">
+												<input type="checkbox" name="ChronicCond_stroke" value="1" />
+											</div>
+										</div>
+									</div>
+									<div class="single-model-search row">
+										<h2 class=" col-sm-4">IsDead</h2>
+										<div class=" col-sm-6">
+											<select name="IsDead" id="Race" required>
+												<option value="" IsDead selected>Select</option>
+												<option value="0">Yes</option>
+												<option value="1">No</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12 col-sm-12">
+									<div class="single-model-search text-center">
+										<button type="submit" class="welcome-btn model-search-btn"
+											onclick="document.getElementById('result').scrollIntoView();">
+											Check policy
+										</button>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- {% if scroll=='result'%}
+		{{scroll}}
+		<div class="container">
+			<div class="welcome-hero-txt" id="result" style="padding: 0%!important;">
+				<h2>{{name}}</h2>
+			</div>
+		</div>
+		{% endif %} -->
+
+
+		<script src="static/js/jquery.js"></script>
+
+		<!--modernizr.min.js-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+		<!--bootstrap.min.js-->
+		<script src="static/js/bootstrap.min.js"></script>
+
+		<!-- bootsnav js -->
+		<script src="static/js/bootsnav.js"></script>
+
+		<!--owl.carousel.js-->
+		<script src="static/js/owl.carousel.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+		<!--Custom JS-->
+		<script src="static/js/custom.js"></script>
+
+</body>
+
+</html>
